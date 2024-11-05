@@ -13,11 +13,12 @@ on:
   pull_request:
     branches: [ "main" ]
     
-permissions:
-  contents: write
-  packages: write
+jobs:
+  build:
 
-steps:
+    runs-on: ubuntu-latest
+
+    steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
       uses: actions/setup-java@v3
@@ -28,25 +29,3 @@ steps:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: xvfb-run ./gradlew build
-
-    - name: Generate JaCoCo Badge
-      uses: cicirello/jacoco-badge-generator@v2
-      with:
-        badges-directory: .github/badges
-        generate-coverage-badge: true
-        coverage-badge-filename: jacoco.svg
-        generate-branches-badge: true
-        branches-badge-filename: branches.svg
-        jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
-
-    - name: Check badge creation
-      run: ls -l .github/badges
-      
-    - name: Commit changes
-      uses: EndBug/add-and-commit@v9
-      with:
-          default_author: github_actions
-          message: 'Updated JaCoCo badges'
-          add: '.github/badges/*.svg'
-    - name: Show test results
-      run: cat build/reports/jacoco/test/jacocoTestReport.csv
