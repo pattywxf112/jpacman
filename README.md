@@ -4,6 +4,7 @@
 ![Branches](.github/badges/branches.svg)
 
 
+
 ## About
 
 Pacman-like game used for teaching software testing.
