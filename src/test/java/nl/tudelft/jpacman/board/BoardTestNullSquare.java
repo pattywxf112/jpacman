@@ -4,14 +4,14 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class BoardTestNullSquare {
+public class BoardTestNullSquare { //this is a comment of boardtestnullsquare
 
     private Board boardWithSquare;
     private Board boardWithNullSquare;
 
     private Square square;
 
-    @BeforeEach
+    @BeforeEach //this is beforeach
     void setUp() {
         square = new BasicSquare();
 
@@ -24,13 +24,13 @@ public class BoardTestNullSquare {
         boardWithNullSquare = new Board(gridWithNullSquare);
     }
 
-    @Test
+    @Test //thisisatest
     void testSquareAtValidSquare() {
         Square retrievedSquare = boardWithSquare.squareAt(0, 0);
         assertThat(retrievedSquare).isEqualTo(square);
     }
 
-    @Test
+    @Test //thisisatestaswell
     void testSquareAtNullSquare() {
         assertThrows(AssertionError.class, () -> {
             boardWithNullSquare.squareAt(0, 0);
