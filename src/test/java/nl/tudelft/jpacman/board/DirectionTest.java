@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
  */
 public class DirectionTest {
     /**
-     * Do we get the correct delta when moving north?
+     * Do we get the correct delta when moving north.
      */
     @Test
     void testNorth() {
