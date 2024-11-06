@@ -36,6 +36,7 @@ jobs:
     
     - name: Generate JaCoCo Badge
       uses: cicirello/jacoco-badge-generator@v2
+
       with:
         badges-directory: .github/badges
         generate-coverage-badge: true
@@ -55,3 +56,4 @@ jobs:
           add: '.github/badges/*.svg'
     - name: Show test results
       run: cat build/reports/jacoco/test/jacocoTestReport.csv
+
