@@ -1,6 +1,3 @@
-/**
-this test created a bug for workflow but the main test is here therefore the workflow should be passed
-
 package nl.tudelft.jpacman.board;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -40,4 +37,3 @@ public class BoardTestNullSquare {
     }
 }
 
-*/
